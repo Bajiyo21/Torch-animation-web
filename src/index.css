@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #000000;
+  --text-primary: #f5f5f7;
+  --text-secondary: #86868b;
+  --accent: #FF5A00;
+  --accent-hover: #e04f00;
+  --border-color: #424245;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+/* Typography */
+h1 {
+  font-size: 5vw;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: clamp(2.2rem, 8vw, 4rem); }
+}
+
+/* Hero Text Overlays with Fluid Sizing */
+.hero-title {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.95);
+}
+.hero-title-large {
+  font-size: clamp(2.2rem, 8vw, 6rem);
+}
+.hero-title-medium {
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Images */
+.hero-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.hero-img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+.feature-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+/* Buttons & CTA */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.gst-note {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Pricing Container */
+.pricing-box {
+  background: #111;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid #222;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sticky Footer */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 0;
+  z-index: 100;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-meta {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1rem;
+}
+
+.footer-links a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-buy {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-buy .price-small {
+  font-weight: 600;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Feature Item */
+.feature-icon {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-table td {
+  padding: 1.5rem 0;
+}
+
+.spec-label {
+  font-weight: 500;
+  width: 40%;
+}
+
+.spec-value {
+  color: var(--text-secondary);
+}
+
+/* RESPONSIVE STYLES FOR 9:16 MOBILE & PORTRAIT SCREENS */
+@media (max-width: 768px) {
+  /* Reduce padding on mobile sections to prevent scroll fatigue and clipping */
+  .section-padding {
+    padding: 4rem 0;
+  }
+
+  /* Make grid gaps tighter on mobile */
+  .grid-2 {
+    gap: 2rem;
+  }
+  .grid-3 {
+    gap: 1.5rem;
+  }
+
+  /* Responsive Headings */
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p, .spec-table td {
+    font-size: 1.05rem;
+  }
+
+  /* Premium Apple-style mobile sticky footer */
+  .sticky-footer {
+    padding: 0.75rem 0;
+  }
+  
+  .footer-content {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-meta {
+    display: none; /* Hide SKU/UPC on mobile */
+  }
+
+  .footer-links {
+    display: none; /* Hide print and share links to prioritize space and conversion */
+  }
+
+  .footer-actions {
+    width: 100%;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .footer-buy {
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Responsive pricing container adjustments */
+  .pricing-box {
+    padding: 1.75rem; /* Scale padding down on mobile */
+  }
+  
+  .pricing-box select {
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .pricing-box .btn {
+    padding: 0.75rem 1.75rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Feature image tweaks */
+  .feature-img {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+}
